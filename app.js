@@ -3,7 +3,7 @@ var mongoose =require('mongoose');
 const path =require('path');
 //const config = require('config');
 const app = express();
-const db = "mongodb+srv://Santosh2695:sanbal2695@cluster0-xwxaw.mongodb.net/test?retryWrites=true&w=majority";
+const db = "mongodb+srv://Santosh2695:sanbal2695@cluster0-xwxaw.mongodb.net/SerlerDB?retryWrites=true&w=majority";
 mongoose.connect(db,{useNewUrlParser: true, useUnifiedTopology: true}).then(()=> console.log('Mongo Connected')).catch(err => console.log(err));
 const user_model = require('./model/User_details');
 app.use(express.json());
