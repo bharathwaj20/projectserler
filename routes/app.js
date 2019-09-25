@@ -47,34 +47,3 @@ app.listen(port, ()=> console.log('Server Started on port ${port}'));
 
 
 
-
-/*mongoose.connect('mongodb+srv://Santosh2695:sanbal2695@cluster0-xwxaw.mongodb.net/test?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true});
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, "connection error"));
-db.once('open',function(){
-    console.log('success');
-});
-
-var user_schema = new mongoose.Schema({
-    First_Name : 'String',
-    Last_name : 'String',
-    EmailID : { type :'String', require: true},
-    Password : 'String',
-    Access_Type : 'String'
-
-});
-user_schema.methods.GetFullName = function(){
-    return this.First_Name + this.Last_name
-
-}
-
-var users = mongoose.model('user_model',user_schema);
-var santosh = new users({First_Name: 'Santosh', Last_name : 'Balaaji', EmailID : 'sv.santosh', Password : '12345', Access_Type: 'Student'});
-var fullName = santosh.GetFullName();
-console.log(fullName);
-
-users.find({'FirstName' : 'Santosh'},function(err)
-{
-if(err) return handleError(err);
-else console.log();
-});*/
