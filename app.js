@@ -1,5 +1,6 @@
 const express = require('express');
-var mongoose =require('mongoose');
+const mongoose =require('mongoose');
+const bodyParser = require('body-parser');
 const path =require('path');
 //const config = require('config');
 const app = express();
@@ -8,6 +9,14 @@ mongoose.connect(db,{useNewUrlParser: true, useUnifiedTopology: true}).then(()=>
 const user_model = require('./model/User_details');
 app.use(express.json());
 
+
+//BodyParser middleware
+app.use(
+    bodyParser.urlencoded({
+        extended: false
+    })
+);
+app.use(bodyParser.json());
 // Read All Entries
 app.get('/', (req,res) =>{
 user_model.find().then(items => console.log( res.json(items)));
